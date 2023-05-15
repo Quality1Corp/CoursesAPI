@@ -11,13 +11,13 @@
         <!--Courses-->
         <scene sceneID="z07-Rf-9SC">
             <objects>
-                <tableViewController id="9Vm-Sf-hZf" sceneMemberID="viewController">
+                <tableViewController id="9Vm-Sf-hZf" customClass="CoursesViewController" customModule="CoursesAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="q3b-hH-sRc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="112" id="cxk-iC-3HR">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="112" id="cxk-iC-3HR" customClass="CourseCell" customModule="CoursesAPI" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="375" height="112"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cxk-iC-3HR" id="y57-Dn-Jsp">
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="290.39999999999998" y="-9.6059113300492616"/>
         </scene>
-        <!--View Controller-->
+        <!--New Course View Controller-->
         <scene sceneID="0ew-EB-amo">
             <objects>
-                <viewController id="p3b-tJ-H1N" sceneMemberID="viewController">
+                <viewController id="p3b-tJ-H1N" customClass="NewCourseViewController" customModule="CoursesAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RHx-f4-bOu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -159,9 +159,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rw9-I7-oGc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UCM-Ar-e93"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JIU-15-cAd"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UCM-Ar-e93">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="p3b-tJ-H1N" id="mHP-sj-InQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JIU-15-cAd">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="p3b-tJ-H1N" id="pXk-qL-j1M"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="courseTitleTF" destination="Ha2-sr-NhE" id="R4Y-L3-O67"/>
+                        <outlet property="numberOfLessonsTF" destination="94o-8K-3Dc" id="Y7T-Qc-Oth"/>
+                        <outlet property="numberOfTestsTF" destination="uBu-HC-Sm0" id="S59-Wl-7CN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZl-tu-qqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

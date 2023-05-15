@@ -9,22 +9,30 @@
 /* Begin PBXBuildFile section */
 		662E60692A115A7B00CD2056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E60682A115A7B00CD2056 /* AppDelegate.swift */; };
 		662E606B2A115A7B00CD2056 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E606A2A115A7B00CD2056 /* SceneDelegate.swift */; };
-		662E606D2A115A7B00CD2056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E606C2A115A7B00CD2056 /* ViewController.swift */; };
+		662E606D2A115A7B00CD2056 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E606C2A115A7B00CD2056 /* CoursesViewController.swift */; };
 		662E60702A115A7B00CD2056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662E606E2A115A7B00CD2056 /* Main.storyboard */; };
 		662E60722A115A7C00CD2056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662E60712A115A7C00CD2056 /* Assets.xcassets */; };
 		662E60752A115A7C00CD2056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662E60732A115A7C00CD2056 /* LaunchScreen.storyboard */; };
 		662E607E2A115B0100CD2056 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 662E607D2A115B0100CD2056 /* Alamofire */; };
+		662E60862A115C2E00CD2056 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E60852A115C2E00CD2056 /* NetworkManager.swift */; };
+		668C8BDC2A122CA800320EAB /* NewCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668C8BDB2A122CA800320EAB /* NewCourseViewController.swift */; };
+		668C8BDE2A122D9C00320EAB /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668C8BDD2A122D9C00320EAB /* Course.swift */; };
+		668C8BE12A12300200320EAB /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668C8BE02A12300200320EAB /* CourseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		662E60652A115A7B00CD2056 /* CoursesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoursesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		662E60682A115A7B00CD2056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		662E606A2A115A7B00CD2056 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		662E606C2A115A7B00CD2056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		662E606C2A115A7B00CD2056 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		662E606F2A115A7B00CD2056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		662E60712A115A7C00CD2056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		662E60742A115A7C00CD2056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		662E60762A115A7C00CD2056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		662E60852A115C2E00CD2056 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		668C8BDB2A122CA800320EAB /* NewCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCourseViewController.swift; sourceTree = "<group>"; };
+		668C8BDD2A122D9C00320EAB /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		668C8BE02A12300200320EAB /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,8 @@
 				662E607F2A115B2200CD2056 /* Application */,
 				662E60802A115B3100CD2056 /* Models */,
 				662E60812A115B4800CD2056 /* ViewControllers */,
+				662E60842A115C1300CD2056 /* Services */,
+				668C8BDF2A122FD000320EAB /* Views */,
 				662E60822A115B5A00CD2056 /* Storyboards */,
 				662E60832A115B6D00CD2056 /* Resources */,
 				662E60762A115A7C00CD2056 /* Info.plist */,
@@ -80,6 +90,7 @@
 		662E60802A115B3100CD2056 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				668C8BDD2A122D9C00320EAB /* Course.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,7 +98,8 @@
 		662E60812A115B4800CD2056 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				662E606C2A115A7B00CD2056 /* ViewController.swift */,
+				662E606C2A115A7B00CD2056 /* CoursesViewController.swift */,
+				668C8BDB2A122CA800320EAB /* NewCourseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,6 +119,22 @@
 				662E60712A115A7C00CD2056 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		662E60842A115C1300CD2056 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				662E60852A115C2E00CD2056 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		668C8BDF2A122FD000320EAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				668C8BE02A12300200320EAB /* CourseCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +214,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				662E606D2A115A7B00CD2056 /* ViewController.swift in Sources */,
+				668C8BDE2A122D9C00320EAB /* Course.swift in Sources */,
+				662E60862A115C2E00CD2056 /* NetworkManager.swift in Sources */,
+				662E606D2A115A7B00CD2056 /* CoursesViewController.swift in Sources */,
+				668C8BE12A12300200320EAB /* CourseCell.swift in Sources */,
 				662E60692A115A7B00CD2056 /* AppDelegate.swift in Sources */,
+				668C8BDC2A122CA800320EAB /* NewCourseViewController.swift in Sources */,
 				662E606B2A115A7B00CD2056 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
