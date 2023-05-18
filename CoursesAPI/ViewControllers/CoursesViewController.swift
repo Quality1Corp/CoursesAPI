@@ -14,6 +14,7 @@ protocol NewCourseViewControllerDelegate: AnyObject {
 final class CoursesViewController: UITableViewController {
     
     private var courses: [Course] = []
+    private let networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,15 @@ final class CoursesViewController: UITableViewController {
     }
     
     private func fetchCourses() {
-        // TODO: - fetch courses
+        networkManager.fetchCourses(from: Link.coursesURL.url) { [weak self] result in
+            switch result {
+                case .success(let courses):
+                    self?.courses = courses
+                    self?.tableView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -41,12 +50,12 @@ extension CoursesViewController: NewCourseViewControllerDelegate {
 
 // MARK: - UITableViewDataSource
 extension CoursesViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         courses.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath)
         guard let cell = cell as? CourseCell else { return UITableViewCell() }
         let course = courses[indexPath.row]
         cell.configure(with: course)

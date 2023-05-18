@@ -20,7 +20,7 @@ struct Course {
     
     init(from courseData: [String: Any]) {
         name = courseData["name"] as? String ?? ""
-        imageUrl = courseData["imageURL"] as? String ?? ""
+        imageUrl = courseData["imageUrl"] as? String ?? ""
         numberOfLessons = courseData["number_of_lessons"] as? Int ?? 0
         numberOfTests = courseData["number_of_tests"] as? Int ?? 0
     }

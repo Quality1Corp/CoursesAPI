@@ -18,7 +18,7 @@ final class NewCourseViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         let course = Course(
             name: courseTitleTF.text ?? "No name",
-            imageUrl: "",
+            imageUrl: Link.courseImageURL.url.absoluteString,
             numberOfLessons: Int(numberOfLessonsTF.text ?? "") ?? 0,
             numberOfTests: Int(numberOfTestsTF.text ?? "") ?? 0
         )
