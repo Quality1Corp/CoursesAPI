@@ -44,7 +44,19 @@ final class CoursesViewController: UITableViewController {
 // MARK: - NewCourseViewControllerDelegate
 extension CoursesViewController: NewCourseViewControllerDelegate {
     func sendPostRequest(with data: Course) {
-        print(data)
+        networkManager.sendPostRequest(to: Link.postRequest.url, with: data) { [weak self] result in
+            guard let self else { return }
+            switch result {
+                case .success(let course):
+                    self.courses.append(course)
+                    self.tableView.insertRows(
+                        at: [IndexPath(row: self.courses.count - 1, section: 0)],
+                        with: .automatic
+                    )
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
     }
 }
 
